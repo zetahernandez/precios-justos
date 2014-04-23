@@ -14,3 +14,5 @@ hs_err_pid*
 /.settings
 .project
 .classpath
+/target
+/src/main/webapp/META-INF/MANIFEST.MF
