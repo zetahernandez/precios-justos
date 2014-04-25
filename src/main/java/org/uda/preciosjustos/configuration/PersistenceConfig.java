@@ -26,7 +26,7 @@ public class PersistenceConfig {
 	private Properties hibernateProperties;
 
 	@Bean
-	public LocalSessionFactoryBean sessionFactory() {
+	public LocalSessionFactoryBean localSessionFactory() {
 		LocalSessionFactoryBean sessionFactory = new LocalSessionFactoryBean();
 		sessionFactory.setDataSource(dataSource);
 		sessionFactory

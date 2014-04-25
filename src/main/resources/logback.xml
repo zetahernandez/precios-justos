@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+	<!-- http://logback.qos.ch/manual/appenders.html -->
+
+	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+			<Pattern>%d{yyyy-MM-dd_HH:mm:ss.SSS} %-5level %logger{36} - %msg%n
+			</Pattern>
+		</encoder>
+	</appender>
+
+	<appender name="FILE"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>precios-justos.log</file>
+		<encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+			<Pattern>%d{yyyy-MM-dd_HH:mm:ss.SSS} [%thread] %-5level %logger{36} -
+				%msg%n
+			</Pattern>
+		</encoder>
+
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<!-- rollover daily -->
+			<fileNamePattern>precios-justos-%d{yyyy-MM-dd}.%i.log
+			</fileNamePattern>
+			<timeBasedFileNamingAndTriggeringPolicy
+				class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+				<!-- or whenever the file size reaches 100MB -->
+				<maxFileSize>100MB</maxFileSize>
+			</timeBasedFileNamingAndTriggeringPolicy>
+		</rollingPolicy>
+	</appender>
+
+	<logger name="org.hibernate.type" level="Debug" />
+	<logger name="org.hibernate" level="WARN" />
+	<logger name="org.springframework" level="WARN" />
+	<logger name="org.springframework.web" level="DEbUG" />
+	<logger name="org.springframework.jdbc" level="DEBUG" />
+	<logger name="org.springframework.web.filter" level="DEBUG" />
+	<logger name="org.springframework.transaction" level="INFO" />
+	<logger name="org.uda.preciosjustos" level="DEBUG" />
+
+	<root level="DEBUG">
+		<appender-ref ref="FILE" />
+		<appender-ref ref="STDOUT" />
+	</root>
+	
+</configuration>

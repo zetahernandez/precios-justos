@@ -4,6 +4,11 @@ import org.springframework.context.ApplicationContextInitializer;
 import org.springframework.context.ConfigurableApplicationContext;
 
 
+/**
+ * Inicializador del contexto
+ * @author zeta
+ *
+ */
 public class ConfigurableApplicationContextInitializer implements ApplicationContextInitializer<ConfigurableApplicationContext> {
 
 	public void initialize(ConfigurableApplicationContext applicationContext) {
