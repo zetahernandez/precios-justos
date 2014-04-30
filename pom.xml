@@ -202,6 +202,5 @@
 	<properties>
 		<wtp.version>2.0</wtp.version>
 		<spring-framework-version>4.0.3.RELEASE</spring-framework-version>
-		<spring-framework-version>4.0.3.RELEASE</spring-framework-version>
 	</properties>
 </project>
