@@ -27,7 +27,7 @@ public class ProductionDatabaseConfig {
 	
 	@Bean
 	public DataSource dataSource() throws NamingException {
-		String dburl = System.getProperty("DATABASE_URL");
+		String dburl = System.getenv("DATABASE_URL");
 		BasicDataSource dataSource = new BasicDataSource();
 		dataSource.setDriverClassName(env.getProperty("jdbc.driverClassName"));
 		dataSource.setUrl(dburl);
