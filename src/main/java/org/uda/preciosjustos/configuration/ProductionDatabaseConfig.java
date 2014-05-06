@@ -24,7 +24,8 @@ import org.springframework.core.env.Environment;
 public class ProductionDatabaseConfig {
 	@Autowired
 	private Environment env;
-
+	
+	@Bean
 	public DataSource dataSource() throws NamingException {
 		String dburl = System.getProperty("DATABASE_URL");
 		BasicDataSource dataSource = new BasicDataSource();
