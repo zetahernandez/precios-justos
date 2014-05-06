@@ -17,8 +17,8 @@ public class ConfigurableApplicationContextInitializer implements ApplicationCon
 
 		if (profile == null || profile.equalsIgnoreCase(Profile.DEV.name())) {
 			applicationContext.getEnvironment().setActiveProfiles(Profile.DEV.name().toLowerCase());
-		} else if (profile.equalsIgnoreCase(Profile.PRODUCTION.name())) {
-			applicationContext.getEnvironment().setActiveProfiles(Profile.PRODUCTION.name().toLowerCase());
+		} else if (profile.equalsIgnoreCase(Profile.PROD.name())) {
+			applicationContext.getEnvironment().setActiveProfiles(Profile.PROD.name().toLowerCase());
 		} else if (profile.equalsIgnoreCase(Profile.TEST.name())) {
 			applicationContext.getEnvironment().setActiveProfiles(Profile.TEST.name().toLowerCase());
 		}
