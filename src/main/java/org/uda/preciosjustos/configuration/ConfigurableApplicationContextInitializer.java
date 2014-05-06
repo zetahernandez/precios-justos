@@ -13,7 +13,7 @@ public class ConfigurableApplicationContextInitializer implements ApplicationCon
 
 	public void initialize(ConfigurableApplicationContext applicationContext) {
 
-		String profile = System.getProperty("profile");
+		String profile = System.getenv("profile");
 
 		if (profile == null || profile.equalsIgnoreCase(Profile.DEV.name())) {
 			applicationContext.getEnvironment().setActiveProfiles(Profile.DEV.name().toLowerCase());
