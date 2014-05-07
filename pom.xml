@@ -8,11 +8,11 @@
 	<name>precios-justos Maven Webapp</name>
 	<url>http://maven.apache.org</url>
 	<dependencies>
+
 		<dependency>
 			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-			<version>3.8.1</version>
-			<scope>test</scope>
+			<artifactId>junit-dep</artifactId>
+			<version>4.11</version>
 		</dependency>
 
 		<dependency>
@@ -76,9 +76,16 @@
 		</dependency>
 
 		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-test</artifactId>
+			<version>${spring-framework-version}</version>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-entitymanager</artifactId>
-			<version>4.3.5.Final</version>
+			<version>${hibernate-version}</version>
 			<!-- will come with Hibernate core -->
 		</dependency>
 
@@ -133,7 +140,26 @@
 			<version>1.7.5</version>
 		</dependency>
 
+		<!-- Twitter -->
+		<dependency>
+			<groupId>org.twitter4j</groupId>
+			<artifactId>twitter4j-core</artifactId>
+			<version>4.0.1</version>
+		</dependency>
 
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+			<version>3.1.0</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>com.jayway.jsonpath</groupId>
+			<artifactId>json-path-assert</artifactId>
+			<version>0.9.1</version>
+			<scope>test</scope>
+		</dependency>
 	</dependencies>
 	<build>
 		<finalName>precios-justos</finalName>
@@ -175,6 +201,18 @@
 			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>2.17</version>
+				<dependencies>
+					<dependency>
+						<groupId>org.apache.maven.surefire</groupId>
+						<artifactId>surefire-junit47</artifactId>
+						<version>2.17</version>
+					</dependency>
+				</dependencies>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-dependency-plugin</artifactId>
 				<version>2.3</version>
 				<executions>
@@ -202,5 +240,6 @@
 	<properties>
 		<wtp.version>2.0</wtp.version>
 		<spring-framework-version>4.0.3.RELEASE</spring-framework-version>
+		<hibernate-version>4.3.5.Final</hibernate-version>
 	</properties>
 </project>
