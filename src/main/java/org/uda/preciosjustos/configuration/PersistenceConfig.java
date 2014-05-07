@@ -16,7 +16,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 @Configuration
 @EnableTransactionManagement
-@Import(value = { DevelopmentDatabaseConfig.class, ProductionDatabaseConfig.class })
+@Import(value = { DevelopmentDatabaseConfig.class, TestingDatabaseConfig.class, ProductionDatabaseConfig.class })
 public class PersistenceConfig {
 
 	@Autowired

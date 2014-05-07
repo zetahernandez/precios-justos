@@ -8,5 +8,5 @@ package org.uda.preciosjustos.configuration;
  * 
  */
 public enum Profile {
-	DEV, TEST, PRODUCTION
+	DEV, TEST, PROD
 }

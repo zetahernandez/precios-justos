@@ -1,11 +1,13 @@
 package org.uda.preciosjustos.configuration;
 
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.util.Properties;
 
 import javax.naming.NamingException;
 import javax.sql.DataSource;
 
-import org.apache.tomcat.dbcp.dbcp.BasicDataSource;
+import org.apache.commons.dbcp.BasicDataSource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -24,12 +26,26 @@ import org.springframework.core.env.Environment;
 public class ProductionDatabaseConfig {
 	@Autowired
 	private Environment env;
-
-	public DataSource dataSource() throws NamingException {
-		String dburl = System.getProperty("DATABASE_URL");
+	
+	@Bean
+	public DataSource dataSource() throws NamingException, URISyntaxException {
+		String dburl = System.getenv("DATABASE_URL");
+		URI uri = new java.net.URI(dburl);
+		String[] userInfo = uri.getUserInfo().split(":");
+		StringBuilder urlBuilder = new StringBuilder();
+		urlBuilder.append("jdbc:");
+		urlBuilder.append(env.getProperty("jdbc.databaseType"));
+		urlBuilder.append("://");
+		urlBuilder.append(uri.getHost());
+		urlBuilder.append(":");
+		urlBuilder.append(uri.getPort());
+		urlBuilder.append(uri.getPath());
 		BasicDataSource dataSource = new BasicDataSource();
 		dataSource.setDriverClassName(env.getProperty("jdbc.driverClassName"));
-		dataSource.setUrl(dburl);
+		dataSource.setUrl(urlBuilder.toString());
+		dataSource.setUsername(userInfo[0]);
+		dataSource.setPassword(userInfo[1]);
+	
 
 		return dataSource;
 	}
