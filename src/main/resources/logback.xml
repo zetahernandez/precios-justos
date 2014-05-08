@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration>
 	<!-- http://logback.qos.ch/manual/appenders.html -->
-
+	
+	<appender name="PAPERTRAIL" class="ch.qos.logback.classic.net.SyslogAppender">
+		<syslogHost>logs.papertrailapp.com</syslogHost>
+		<port>26800</port>
+		<facility>USER</facility>
+		<suffixPattern>precios-justos: %logger %msg</suffixPattern>
+	</appender>
+	
 	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
 		<encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
 			<Pattern>%d{yyyy-MM-dd_HH:mm:ss.SSS} %-5level %logger{36} - %msg%n
@@ -42,6 +49,7 @@
 	<root level="DEBUG">
 		<appender-ref ref="FILE" />
 		<appender-ref ref="STDOUT" />
+		<appender-ref ref="PAPERTRAIL" />
 	</root>
-	
+
 </configuration>
