@@ -5,7 +5,7 @@
 	<appender name="PAPERTRAIL" class="ch.qos.logback.classic.net.SyslogAppender">
 		<syslogHost>logs.papertrailapp.com</syslogHost>
 		<port>26800</port>
-		<facility>precios-justos</facility>
+		<facility>USER</facility>
 		<suffixPattern>precios-justos: %logger %msg</suffixPattern>
 	</appender>
 	
