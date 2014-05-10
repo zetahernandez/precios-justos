@@ -9,12 +9,21 @@
 	<url>http://maven.apache.org</url>
 	<dependencies>
 
+		<!-- Test -->
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit-dep</artifactId>
 			<version>4.11</version>
 		</dependency>
 
+		<dependency>
+			<groupId>com.jayway.jsonpath</groupId>
+			<artifactId>json-path-assert</artifactId>
+			<version>0.9.1</version>
+			<scope>test</scope>
+		</dependency>
+
+		<!-- Spring -->
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-context</artifactId>
@@ -82,6 +91,7 @@
 			<scope>test</scope>
 		</dependency>
 
+		<!-- Hibernate -->
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-entitymanager</artifactId>
@@ -89,12 +99,14 @@
 			<!-- will come with Hibernate core -->
 		</dependency>
 
+		<!-- Database connection pool -->
 		<dependency>
 			<groupId>commons-dbcp</groupId>
 			<artifactId>commons-dbcp</artifactId>
 			<version>1.4</version>
 		</dependency>
 
+		<!-- Database Drivers -->
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
@@ -134,6 +146,7 @@
 			<artifactId>jcl-over-slf4j</artifactId>
 			<version>1.7.5</version>
 		</dependency>
+
 		<dependency>
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-api</artifactId>
@@ -152,6 +165,7 @@
 			<version>4.0.1</version>
 		</dependency>
 
+		<!-- Servlet 3.0 -->
 		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>javax.servlet-api</artifactId>
@@ -160,10 +174,9 @@
 		</dependency>
 
 		<dependency>
-			<groupId>com.jayway.jsonpath</groupId>
-			<artifactId>json-path-assert</artifactId>
-			<version>0.9.1</version>
-			<scope>test</scope>
+			<groupId>com.google.code.geocoder-java</groupId>
+			<artifactId>geocoder-java</artifactId>
+			<version>0.16</version>
 		</dependency>
 	</dependencies>
 	<build>

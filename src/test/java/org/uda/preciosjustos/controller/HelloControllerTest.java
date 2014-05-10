@@ -14,8 +14,7 @@ public class HelloControllerTest extends IntegrationTestBase {
 	@Test
 	public void getHello() throws Exception {
 
-		this.mvc.perform(get("/").accept("application/json"))
-				.andExpect(status().isOk())
+		this.mvc.perform(get("/").accept("application/json")).andExpect(status().isOk())
 				.andExpect(content().contentType(MediaType.APPLICATION_JSON))
 				.andExpect(jsonPath("$.message").value("hola"));
 	}

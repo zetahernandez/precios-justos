@@ -2,7 +2,6 @@ package org.uda.preciosjustos.twitter;
 
 import javax.annotation.PostConstruct;
 
-import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -24,8 +23,22 @@ public class SearchTweets{
 	    twitterStream.addListener(twitterListener);
 	    // sample() method internally creates a thread which manipulates TwitterStream and calls these adequate listener methods continuously.
 	    FilterQuery filterQuery = new FilterQuery();
-	    filterQuery.track(new String[] {"preguntados"});
+	    filterQuery.track(new String[] {"preciosjustos"});
 	    twitterStream.filter(filterQuery);
 	}
+	
+	
+	public void changeTracker(String[] tracks){
+		twitterStream.cleanUp();
+		FilterQuery filterQuery = new FilterQuery();
+	    filterQuery.track(tracks);
+	    twitterStream.filter(filterQuery);  
+	}
+	
+	public void stopTrack(){
+		twitterStream.shutdown();
+	}
+	
+	
 
 }
