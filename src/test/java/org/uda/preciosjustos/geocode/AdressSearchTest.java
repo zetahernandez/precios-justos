@@ -12,8 +12,6 @@ public class AdressSearchTest {
 
 	@Test
 	public void test() throws IOException {
-		String string = new String();
-		
 		AdressSearch adressSearch = new AdressSearch();
 		GeocodeResponse response = adressSearch.searchAddress("Matheu 1905, Godoy Cruz, Mendoza", "AR");
 		Assert.assertEquals(GeocoderStatus.OK, response.getStatus());
