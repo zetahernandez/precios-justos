@@ -7,6 +7,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
+import org.springframework.context.annotation.Profile;
 import org.springframework.scheduling.annotation.EnableScheduling;
 import org.uda.preciosjustos.task.HerokuNotIdle;
 
@@ -24,11 +25,11 @@ import org.uda.preciosjustos.task.HerokuNotIdle;
 @Import(PersistenceConfig.class)
 @EnableScheduling
 public class AppConfig {
-	
+
+	@Profile("prod")
 	@Bean
-	public HerokuNotIdle herokuNotIdle(){
+	public HerokuNotIdle herokuNotIdle() {
 		return new HerokuNotIdle();
 	}
-	
-}
 
+}

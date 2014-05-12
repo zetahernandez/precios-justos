@@ -26,11 +26,11 @@ import org.springframework.core.env.Environment;
 public class ProductionDatabaseConfig {
 	@Autowired
 	private Environment env;
-	
+
 	@Bean
 	public DataSource dataSource() throws NamingException, URISyntaxException {
 		String dburl = System.getenv("DATABASE_URL");
-		URI uri = new java.net.URI(dburl);
+		URI uri = new URI(dburl);
 		String[] userInfo = uri.getUserInfo().split(":");
 		StringBuilder urlBuilder = new StringBuilder();
 		urlBuilder.append("jdbc:");
@@ -45,17 +45,12 @@ public class ProductionDatabaseConfig {
 		dataSource.setUrl(urlBuilder.toString());
 		dataSource.setUsername(userInfo[0]);
 		dataSource.setPassword(userInfo[1]);
-	
-
 		return dataSource;
 	}
 
 	@Bean
 	public Properties hibernateProperties() {
 		return new Properties() {
-			/**
-				 * 
-				 */
 			private static final long serialVersionUID = -1315739295711577049L;
 
 			{

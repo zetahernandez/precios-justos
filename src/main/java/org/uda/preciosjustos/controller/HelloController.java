@@ -13,16 +13,16 @@ import org.uda.preciosjustos.dto.HelloDTO;
 
 /**
  * @author zeta
- *
+ * 
  */
 
 @RestController
 @RequestMapping("/")
 public class HelloController {
 
-	@RequestMapping(method=RequestMethod.GET,produces={MediaType.APPLICATION_JSON_VALUE})
+	@RequestMapping(method = RequestMethod.GET, produces = { MediaType.APPLICATION_JSON_VALUE })
 	@ResponseStatus(value = HttpStatus.OK)
-	public HelloDTO getController(){
+	public HelloDTO getController() {
 		HelloDTO helloDTO = new HelloDTO();
 		helloDTO.setMessage("hola");
 		return helloDTO;

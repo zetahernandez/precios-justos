@@ -16,7 +16,7 @@ public class TwitterServiceImpl implements TwitterService {
 	@Override
 	@Transactional
 	public void processTwitterStatus(Status status) {
-		LOG.debug("Recivimos el status en el service para procesarlo");;;		
+		LOG.debug("Recivimos el status en el service para procesarlo");
 	}
 
 }

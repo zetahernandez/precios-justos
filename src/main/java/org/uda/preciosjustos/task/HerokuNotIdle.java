@@ -9,8 +9,9 @@ public class HerokuNotIdle {
 
 	private static final Logger LOG = LoggerFactory.getLogger(HerokuNotIdle.class);
 	
-	@Scheduled(fixedDelay=60000)
+	@Scheduled(fixedDelay=120000)
 	public void herokuNotIdle(){
+		LOG.debug("Heroku not idle execution");
 		RestTemplate restTemplate = new RestTemplate();
 		restTemplate.getForObject("http://precios-justos.herokuapp.com/rest/", Object.class);
 	}
