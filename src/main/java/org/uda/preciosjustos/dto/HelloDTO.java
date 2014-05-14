@@ -1,6 +1,8 @@
 package org.uda.preciosjustos.dto;
 
-public class HelloDTO {
+import java.io.Serializable;
+
+public class HelloDTO implements Serializable {
 	private String message;
 
 	public String getMessage() {

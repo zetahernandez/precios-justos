@@ -19,12 +19,13 @@ import org.uda.preciosjustos.dto.HelloDTO;
 @RestController
 @RequestMapping("/")
 public class HelloController {
-
+	
 	@RequestMapping(method = RequestMethod.GET, produces = { MediaType.APPLICATION_JSON_VALUE })
 	@ResponseStatus(value = HttpStatus.OK)
 	public HelloDTO getController() {
 		HelloDTO helloDTO = new HelloDTO();
-		helloDTO.setMessage("hola");
+		helloDTO.setMessage("hola");		
 		return helloDTO;
 	}
+	
 }
