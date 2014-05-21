@@ -19,3 +19,4 @@ hs_err_pid*
 precios-justos.log
 twitter4j.properties
 /nb-configuration.xml
+/nbactions.xml
