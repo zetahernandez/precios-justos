@@ -26,14 +26,13 @@ public class PersistenceConfig {
 	private Properties hibernateProperties;
 
 	@Bean
-	public LocalSessionFactoryBean localSessionFactory() {
+	public SessionFactory localSessionFactory() {
 		LocalSessionFactoryBean sessionFactory = new LocalSessionFactoryBean();
 		sessionFactory.setDataSource(dataSource);
-		sessionFactory
-				.setPackagesToScan(new String[] { "org.uda.preciosjustos.model" });
+		sessionFactory.setPackagesToScan(new String[] { "org.uda.preciosjustos.model" });
 		sessionFactory.setHibernateProperties(hibernateProperties);
 
-		return sessionFactory;
+		return (SessionFactory) sessionFactory;
 	}
 
 	@Bean

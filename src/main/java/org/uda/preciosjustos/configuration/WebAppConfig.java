@@ -16,7 +16,7 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 @ComponentScan("org.uda.preciosjustos.controller")
 public class WebAppConfig {
 
-	@Bean
+    @Bean
     public ContentNegotiatingViewResolver viewResolver() {
 		ContentNegotiatingViewResolver resolver = new ContentNegotiatingViewResolver();
 		List<ViewResolver> viewResolvers = new ArrayList<ViewResolver>();
