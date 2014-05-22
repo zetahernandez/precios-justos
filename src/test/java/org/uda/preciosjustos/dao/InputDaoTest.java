@@ -19,6 +19,7 @@ package org.uda.preciosjustos.dao;
 
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.Assert;
 import org.uda.preciosjustos.RepositoryTestBase;
 import org.uda.preciosjustos.model.Unit;
@@ -27,12 +28,14 @@ import org.uda.preciosjustos.model.Unit;
  *
  * @author octa
  */
+
 public class InputDaoTest extends RepositoryTestBase{
     
     @Autowired
     private UnitDao unitDao;
     
     @Test
+    @Transactional
     public void test(){
         Unit unit = new Unit("kilos");
         unitDao.saveOrUpdate( unit );

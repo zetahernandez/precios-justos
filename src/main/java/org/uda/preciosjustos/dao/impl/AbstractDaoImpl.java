@@ -18,6 +18,7 @@ package org.uda.preciosjustos.dao.impl;
 
 import java.io.Serializable;
 import java.util.List;
+
 import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -56,12 +57,14 @@ public abstract class AbstractDaoImpl<E, I extends Serializable> implements Abst
         getCurrentSession().delete(e);
     }
 
-    @Override
+    @SuppressWarnings("unchecked")
+	@Override
     public E findById(I id) {
         return (E) getCurrentSession().get(entityClass, id);
     }
 
-    @Override
+    @SuppressWarnings("unchecked")
+	@Override
     public List<E> listByCriteria(Criterion criterion) {
         Criteria criteria = getCurrentSession().createCriteria(entityClass);
         criteria.add(criterion);
