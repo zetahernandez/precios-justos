@@ -31,5 +31,5 @@ public interface AbstractDao <E, I extends Serializable>{
     void delete(E e);
     E findById(I id);
     List<E> listByCriteria(Criterion criterion);
-    
+    List<E> listAll();
 }

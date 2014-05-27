@@ -71,5 +71,12 @@ public abstract class AbstractDaoImpl<E, I extends Serializable> implements Abst
         return criteria.list();
     }
     
+    @SuppressWarnings("unchecked")
+	@Override
+    public List<E> listAll() {
+        Criteria criteria = getCurrentSession().createCriteria(entityClass);
+        return criteria.list();
+    }
+    
     
 }
