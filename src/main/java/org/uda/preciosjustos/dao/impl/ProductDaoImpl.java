@@ -29,7 +29,6 @@ import org.uda.preciosjustos.model.Product;
  * @author octa
  */
 @Repository
-@Transactional
 public class ProductDaoImpl extends AbstractDaoImpl<Product, Long> implements ProductDao{
 
     public ProductDaoImpl() {

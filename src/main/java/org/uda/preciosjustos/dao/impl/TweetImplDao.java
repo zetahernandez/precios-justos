@@ -26,7 +26,6 @@ import org.uda.preciosjustos.model.Tweet;
  * @author octa
  */
 @Repository
-@Transactional
 public class TweetImplDao extends AbstractDaoImpl<Tweet, Long> implements TweetDao{
 
     public TweetImplDao() {

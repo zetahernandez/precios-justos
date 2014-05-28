@@ -3,6 +3,7 @@ package org.uda.preciosjustos.twitter;
 import javax.annotation.PostConstruct;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Component;
 
 import twitter4j.FilterQuery;
@@ -14,6 +15,7 @@ import twitter4j.TwitterStreamFactory;
  * @author zeta
  *
  */
+@Profile(value={"prod,dev"})
 @Component
 public class SearchTweets {
 

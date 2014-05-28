@@ -11,7 +11,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
 import org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor;
 import org.springframework.orm.hibernate4.HibernateTransactionManager;
-import org.springframework.orm.hibernate4.LocalSessionFactoryBean;
+import org.springframework.orm.hibernate4.LocalSessionFactoryBuilder;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 @Configuration
@@ -26,14 +26,14 @@ public class PersistenceConfig {
 	private Properties hibernateProperties;
 
 	@Bean
-	public LocalSessionFactoryBean localSessionFactory() {
-		LocalSessionFactoryBean sessionFactory = new LocalSessionFactoryBean();
-		sessionFactory.setDataSource(dataSource);
-		sessionFactory.setPackagesToScan(new String[] { "org.uda.preciosjustos.model" });
-		sessionFactory.setHibernateProperties(hibernateProperties);
+	public SessionFactory sessionFactory() {
+		LocalSessionFactoryBuilder builder = new LocalSessionFactoryBuilder(dataSource);
+		builder.scanPackages("org.uda.preciosjustos.model").addProperties(
+				hibernateProperties);
 
-		return sessionFactory;
+		return builder.buildSessionFactory();
 	}
+
 
 	@Bean
 	@Autowired

@@ -26,7 +26,6 @@ import org.uda.preciosjustos.model.Input;
  * @author octa
  */
 @Repository
-@Transactional
 public class InputDaoImpl extends AbstractDaoImpl<Input, Long> implements InputDao{
 
     public InputDaoImpl() {

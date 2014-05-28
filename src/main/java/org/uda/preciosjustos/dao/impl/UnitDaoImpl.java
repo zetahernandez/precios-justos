@@ -30,7 +30,6 @@ import org.uda.preciosjustos.model.Unit;
  * @author octa
  */
 @Repository
-@Transactional
 public class UnitDaoImpl extends AbstractDaoImpl<Unit, Long> implements UnitDao{
 
     public UnitDaoImpl() {

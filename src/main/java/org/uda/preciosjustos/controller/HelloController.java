@@ -3,8 +3,6 @@
  */
 package org.uda.preciosjustos.controller;
 
-import javax.transaction.Transactional;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -29,7 +27,6 @@ public class HelloController {
 	
 	@RequestMapping(method = RequestMethod.GET, produces = { MediaType.APPLICATION_JSON_VALUE })
 	@ResponseStatus(value = HttpStatus.OK)
-	@Transactional
 	public HelloDTO getController() {
 		HelloDTO helloDTO = new HelloDTO();
 		helloDTO.setMessage("hola");

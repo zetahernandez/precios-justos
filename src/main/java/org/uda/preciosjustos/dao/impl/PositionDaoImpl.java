@@ -26,7 +26,6 @@ import org.uda.preciosjustos.model.Position;
  * @author octa
  */
 @Repository
-@Transactional
 public class PositionDaoImpl extends AbstractDaoImpl<Position, Long> implements PositionDao{
 
     public PositionDaoImpl() {
