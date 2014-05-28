@@ -21,7 +21,6 @@ import java.util.List;
 
 import org.hibernate.criterion.Restrictions;
 import org.springframework.stereotype.Repository;
-import org.springframework.transaction.annotation.Transactional;
 import org.uda.preciosjustos.dao.UnitDao;
 import org.uda.preciosjustos.model.Unit;
 
