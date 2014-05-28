@@ -18,13 +18,14 @@ package org.uda.preciosjustos.services;
 
 import java.util.ArrayList;
 import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.uda.preciosjustos.dao.InputDao;
 import org.uda.preciosjustos.model.Input;
 import org.uda.preciosjustos.model.Position;
-import org.uda.utils.EarthUtils;
+import org.uda.preciosjustos.utils.EarthUtils;
 
 /**
  *

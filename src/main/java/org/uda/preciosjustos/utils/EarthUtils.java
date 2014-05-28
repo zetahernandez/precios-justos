@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package org.uda.utils;
+package org.uda.preciosjustos.utils;
 
 import java.util.List;
 import org.uda.preciosjustos.model.Input;
