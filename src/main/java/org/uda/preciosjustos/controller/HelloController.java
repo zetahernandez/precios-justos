@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
-import org.uda.preciosjustos.dao.UnitDao;
 import org.uda.preciosjustos.dto.HelloDTO;
 import org.uda.preciosjustos.services.ProductService;
 
