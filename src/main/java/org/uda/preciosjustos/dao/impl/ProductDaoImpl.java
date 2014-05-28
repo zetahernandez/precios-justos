@@ -16,7 +16,11 @@
 
 package org.uda.preciosjustos.dao.impl;
 
+import java.util.List;
+
+import org.hibernate.criterion.Restrictions;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 import org.uda.preciosjustos.dao.ProductDao;
 import org.uda.preciosjustos.model.Product;
 
@@ -25,10 +29,23 @@ import org.uda.preciosjustos.model.Product;
  * @author octa
  */
 @Repository
+@Transactional
 public class ProductDaoImpl extends AbstractDaoImpl<Product, Long> implements ProductDao{
 
     public ProductDaoImpl() {
         super(Product.class);
     }
+
+	@Override
+	public Product findByName(String name) {
+		
+		List<Product> products = listByCriteria(Restrictions.eq("name", name));
+		
+		if(products.size() > 0){
+			return products.get(0);
+		}else{
+			return null;
+		}
+	}
     
 }

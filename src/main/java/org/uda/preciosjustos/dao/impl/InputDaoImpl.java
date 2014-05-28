@@ -17,6 +17,7 @@
 package org.uda.preciosjustos.dao.impl;
 
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 import org.uda.preciosjustos.dao.InputDao;
 import org.uda.preciosjustos.model.Input;
 
@@ -25,6 +26,7 @@ import org.uda.preciosjustos.model.Input;
  * @author octa
  */
 @Repository
+@Transactional
 public class InputDaoImpl extends AbstractDaoImpl<Input, Long> implements InputDao{
 
     public InputDaoImpl() {

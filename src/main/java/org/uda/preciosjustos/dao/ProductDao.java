@@ -23,5 +23,5 @@ import org.uda.preciosjustos.model.Product;
  * @author octa
  */
 public interface ProductDao extends AbstractDao<Product, Long>{
-    
+    Product findByName(String name);
 }

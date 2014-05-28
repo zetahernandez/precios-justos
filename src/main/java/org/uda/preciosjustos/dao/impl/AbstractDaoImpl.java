@@ -24,6 +24,7 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.criterion.Criterion;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.transaction.annotation.Transactional;
 import org.uda.preciosjustos.dao.AbstractDao;
 
 /**
@@ -32,6 +33,7 @@ import org.uda.preciosjustos.dao.AbstractDao;
  * @param <E>
  * @param <I>
  */
+@Transactional
 public abstract class AbstractDaoImpl<E, I extends Serializable> implements AbstractDao<E, I>{
     
     private Class<E> entityClass;
@@ -42,7 +44,7 @@ public abstract class AbstractDaoImpl<E, I extends Serializable> implements Abst
     public AbstractDaoImpl(Class<E> entityClass) {
         this.entityClass = entityClass;
     }
-
+ 
     public Session getCurrentSession(){
         return sessionFactory.getCurrentSession();
     }

@@ -18,6 +18,7 @@ package org.uda.preciosjustos.dao.impl;
 
 
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 import org.uda.preciosjustos.dao.TwitterUserDao;
 import org.uda.preciosjustos.model.TwitterUser;
 
@@ -26,6 +27,7 @@ import org.uda.preciosjustos.model.TwitterUser;
  * @author octa
  */
 @Repository
+@Transactional
 public class TwitterUserDaoImpl extends AbstractDaoImpl<TwitterUser, Long> implements TwitterUserDao{
 
     public TwitterUserDaoImpl() {
