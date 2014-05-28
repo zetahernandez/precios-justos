@@ -17,7 +17,11 @@
 package org.uda.preciosjustos.dao.impl;
 
 
+import java.util.List;
+
+import org.hibernate.criterion.Restrictions;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 import org.uda.preciosjustos.dao.UnitDao;
 import org.uda.preciosjustos.model.Unit;
 
@@ -26,10 +30,23 @@ import org.uda.preciosjustos.model.Unit;
  * @author octa
  */
 @Repository
+@Transactional
 public class UnitDaoImpl extends AbstractDaoImpl<Unit, Long> implements UnitDao{
 
     public UnitDaoImpl() {
         super(Unit.class);
     }
+
+	@Override
+	public Unit findByName(String name) {
+		
+		List<Unit> units = listByCriteria(Restrictions.eq("name", name));
+		
+		if(units.size() > 0){
+			return units.get(0);
+		}else{
+			return null;
+		}
+	}
     
 }

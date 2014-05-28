@@ -24,4 +24,5 @@ import org.uda.preciosjustos.model.Unit;
  */
 public interface UnitDao extends AbstractDao<Unit, Long>{
     
+	Unit findByName(String name);
 }

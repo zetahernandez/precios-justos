@@ -46,7 +46,7 @@ public class Product implements Serializable {
     
     @ManyToOne
     private Unit unit;
-
+    
     public Product() {
     }
 
