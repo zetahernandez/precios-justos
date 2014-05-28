@@ -35,19 +35,19 @@ import javax.persistence.Temporal;
 public class Input implements Serializable {
     
     /**
-	 * 
-	 */
-	private static final long serialVersionUID = 3726557978703807755L;
+     *
+     */
+    private static final long serialVersionUID = 3726557978703807755L;
 
-	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    
+
     @ManyToOne
     private Product product;
     
     @Column (nullable = false)
-    private float cantity;
+    private float quantity;
     
     @Column (nullable = false)
     private float price;
@@ -66,9 +66,9 @@ public class Input implements Serializable {
     public Input() {
     }
 
-    public Input(Product product, float cantity, float price, Position position, Date created_at, Tweet tweet) {
+    public Input(Product product, float quantity, float price, Position position, Date created_at, Tweet tweet) {
         this.product = product;
-        this.cantity = cantity;
+        this.quantity = quantity;
         this.price = price;
         this.position = position;
         this.created_at = created_at;
@@ -92,11 +92,11 @@ public class Input implements Serializable {
     }
 
     public float getCantity() {
-        return cantity;
+        return quantity;
     }
 
-    public void setCantity(float cantity) {
-        this.cantity = cantity;
+    public void setCantity(float quantity) {
+        this.quantity = quantity;
     }
 
     public float getPrice() {
