@@ -16,6 +16,7 @@ import org.springframework.context.annotation.PropertySource;
 import org.springframework.core.env.Environment;
 
 /**
+ * Configuración de acceso a datos para producción
  * 
  * @author zeta
  * 

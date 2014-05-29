@@ -12,5 +12,10 @@ import org.uda.preciosjustos.model.Product;
 @Transactional
 public interface ProductService {
 
+	/**
+	 * Obtener todos los productos
+	 * 
+	 * @return List<Product>
+	 */
 	List<Product> allProducts();
 }

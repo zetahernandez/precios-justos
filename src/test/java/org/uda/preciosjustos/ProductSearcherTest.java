@@ -7,11 +7,11 @@ import org.junit.Assert;
 import org.junit.Test;
 import org.uda.preciosjustos.model.Product;
 import org.uda.preciosjustos.model.Unit;
-import org.uda.preciosjustos.services.AddressSearcher;
-import org.uda.preciosjustos.services.PriceSearcher;
-import org.uda.preciosjustos.services.ProductSearcher;
 import org.uda.preciosjustos.services.TweetData;
-import org.uda.preciosjustos.services.TweetExtractor;
+import org.uda.preciosjustos.twitter.AddressSearcher;
+import org.uda.preciosjustos.twitter.PriceSearcher;
+import org.uda.preciosjustos.twitter.ProductSearcher;
+import org.uda.preciosjustos.twitter.TweetExtractor;
 
 public class ProductSearcherTest extends RepositoryTestBase {
 

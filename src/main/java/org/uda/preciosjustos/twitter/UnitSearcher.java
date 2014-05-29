@@ -1,4 +1,4 @@
-package org.uda.preciosjustos.services;
+package org.uda.preciosjustos.twitter;
 
 import org.apache.commons.lang3.StringUtils;
 import org.uda.preciosjustos.model.Unit;

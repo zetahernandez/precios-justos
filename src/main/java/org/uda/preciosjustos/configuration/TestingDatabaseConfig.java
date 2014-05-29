@@ -12,6 +12,12 @@ import org.springframework.context.annotation.PropertySource;
 import org.springframework.core.env.Environment;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 
+/**
+ * Configuración de acceso a datos para testing
+ * 
+ * @author zeta
+ *
+ */
 @Profile("test")
 @Configuration
 @PropertySource("classpath:test.properties")

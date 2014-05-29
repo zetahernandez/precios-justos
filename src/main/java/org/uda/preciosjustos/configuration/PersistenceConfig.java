@@ -14,6 +14,12 @@ import org.springframework.orm.hibernate4.HibernateTransactionManager;
 import org.springframework.orm.hibernate4.LocalSessionFactoryBuilder;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
+/**
+ * clase que tiene la configuración relacionada al accesso a datos, 
+ * transacciones y sessión de hibernate
+ * @author zeta
+ *
+ */
 @Configuration
 @EnableTransactionManagement
 @Import(value = { DevelopmentDatabaseConfig.class, TestingDatabaseConfig.class, ProductionDatabaseConfig.class })

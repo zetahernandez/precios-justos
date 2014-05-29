@@ -21,59 +21,58 @@ public class Bootstrap {
 	private UnitDao unitDao;
 	@Autowired
 	private ProductDao productDao;
-	
+
 	@Autowired
 	@Qualifier("transactionManager")
 	protected PlatformTransactionManager txManager;
-	
+
 	@PostConstruct
 	public void initializeDataBase() {
-		
-		  TransactionTemplate tmpl = new TransactionTemplate(txManager);
-	        tmpl.execute(new TransactionCallbackWithoutResult() {
-	            @Override
-	            protected void doInTransactionWithoutResult(TransactionStatus status) {
-	            	Unit unit = null;
-	        		
-	        		if(unitDao.findByName("kilo") == null){
-	        			unit = new Unit("kilo");
-	        			unitDao.saveOrUpdate(unit);
-	        		}
-	        		
-	        		if(productDao.findByName("manzana") == null){
-	        			productDao.saveOrUpdate(new Product("manzana",unit));	
-	        		}
-	        		
-	        		if(productDao.findByName("tomate") == null){
-	        			productDao.saveOrUpdate(new Product("tomate",unit));	
-	        		}
-	        		
-	        		if(productDao.findByName("pan") == null){
-	        			productDao.saveOrUpdate(new Product("pan",unit));	
-	        		}
-	        		
-	        		if(productDao.findByName("mandarina") == null){
-	        			productDao.saveOrUpdate(new Product("mandarina",unit));	
-	        		}
-	        		
-	        		if(productDao.findByName("pera") == null){
-	        			productDao.saveOrUpdate(new Product("pera",unit));	
-	        		}
-	        		
-	        		if(productDao.findByName("pan") == null){
-	        			productDao.saveOrUpdate(new Product("tomate",unit));	
-	        		}
-	        		
-	        		if(productDao.findByName("zanahoria") == null){
-	        			productDao.saveOrUpdate(new Product("tomate",unit));	
-	        		}
-	        		
-	        		if(productDao.findByName("asado") == null){
-	        			productDao.saveOrUpdate(new Product("asado",unit));	
-	        		}
-	            }
-	        });
-		
-		
+
+		TransactionTemplate tmpl = new TransactionTemplate(txManager);
+		tmpl.execute(new TransactionCallbackWithoutResult() {
+			@Override
+			protected void doInTransactionWithoutResult(TransactionStatus status) {
+				Unit unit = null;
+
+				if (unitDao.findByName("kilo") == null) {
+					unit = new Unit("kilo");
+					unitDao.saveOrUpdate(unit);
+				}
+
+				if (productDao.findByName("manzana") == null) {
+					productDao.saveOrUpdate(new Product("manzana", unit));
+				}
+
+				if (productDao.findByName("tomate") == null) {
+					productDao.saveOrUpdate(new Product("tomate", unit));
+				}
+
+				if (productDao.findByName("pan") == null) {
+					productDao.saveOrUpdate(new Product("pan", unit));
+				}
+
+				if (productDao.findByName("mandarina") == null) {
+					productDao.saveOrUpdate(new Product("mandarina", unit));
+				}
+
+				if (productDao.findByName("pera") == null) {
+					productDao.saveOrUpdate(new Product("pera", unit));
+				}
+
+				if (productDao.findByName("pan") == null) {
+					productDao.saveOrUpdate(new Product("tomate", unit));
+				}
+
+				if (productDao.findByName("zanahoria") == null) {
+					productDao.saveOrUpdate(new Product("tomate", unit));
+				}
+
+				if (productDao.findByName("asado") == null) {
+					productDao.saveOrUpdate(new Product("asado", unit));
+				}
+			}
+		});
+
 	}
 }

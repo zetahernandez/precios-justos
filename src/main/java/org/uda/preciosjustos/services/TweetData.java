@@ -3,6 +3,14 @@ package org.uda.preciosjustos.services;
 import org.uda.preciosjustos.model.Product;
 import org.uda.preciosjustos.model.Unit;
 
+/**
+ * Contiene la información relevante para nuestro sistema que se puede llegar a 
+ * encotrar en un tuit
+ * 
+ * @author zeta
+ * @author octa
+ *
+ */
 public class TweetData {
 	
 	private Product product;
@@ -42,7 +50,5 @@ public class TweetData {
 	public void setAddress(String address) {
 		this.address = address;
 	}
-	
-	
-	
+
 }

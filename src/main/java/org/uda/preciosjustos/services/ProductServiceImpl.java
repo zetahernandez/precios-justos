@@ -17,6 +17,9 @@ public class ProductServiceImpl implements ProductService {
 	@Autowired
 	private ProductDao productDao;
 	
+	/* (non-Javadoc)
+	 * @see org.uda.preciosjustos.services.ProductService#allProducts()
+	 */
 	@Override
 	public List<Product> allProducts() {
 		return productDao.listAll();

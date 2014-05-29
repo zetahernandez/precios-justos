@@ -16,6 +16,7 @@ import org.uda.preciosjustos.geocode.AdressSearch;
 import org.uda.preciosjustos.model.Input;
 import org.uda.preciosjustos.model.Position;
 import org.uda.preciosjustos.model.Product;
+import org.uda.preciosjustos.twitter.TweetExtractor;
 
 import com.google.code.geocoder.model.GeocodeResponse;
 import com.google.code.geocoder.model.GeocoderResult;
