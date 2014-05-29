@@ -37,7 +37,7 @@ public class Unit implements Serializable {
 	private static final long serialVersionUID = 8020301901453692796L;
 
 	@Id
-    @GeneratedValue(strategy=GenerationType.IDENTITY)
+    @GeneratedValue(strategy=GenerationType.AUTO)
     private Long id;
     
     @Column (nullable = false)

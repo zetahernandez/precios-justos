@@ -19,6 +19,7 @@ package org.uda.preciosjustos.model;
 import java.io.Serializable;
 import java.util.Date;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -40,24 +41,23 @@ public class Tweet implements Serializable {
 	private static final long serialVersionUID = 4855104408061127817L;
 
 	@Id
-    @GeneratedValue(strategy=GenerationType.IDENTITY)
-    @Column (nullable = false)
+	@GeneratedValue(strategy=GenerationType.AUTO)
     private Long id;
     
-    @Column (nullable = false)
+    @Column
     private Long tweet_id;
     
-    @Column (nullable = false)
+    @Column
     @Temporal(javax.persistence.TemporalType.DATE)
     private Date created_at;
     
-    @Column (nullable = false)
+    @Column
     private String text;
     
-    @ManyToOne
+    @ManyToOne(cascade=CascadeType.ALL)
     private TwitterUser user;
     
-    @Column (nullable = false)
+    @Column(length=4000)
     private String tweet_json;
 
     public Tweet() {

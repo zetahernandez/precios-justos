@@ -15,7 +15,7 @@ import twitter4j.TwitterStreamFactory;
  * @author zeta
  *
  */
-@Profile(value={"prod,dev"})
+@Profile(value={"prod","dev"})
 @Component
 public class SearchTweets {
 

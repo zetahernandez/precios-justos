@@ -41,7 +41,7 @@ public class Input implements Serializable {
     private static final long serialVersionUID = 3726557978703807755L;
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy=GenerationType.AUTO)
     private Long id;
 
     @ManyToOne
@@ -61,7 +61,7 @@ public class Input implements Serializable {
     private Date created_at;
     
     
-    @ManyToOne
+    @ManyToOne(cascade=CascadeType.ALL)
     private Tweet tweet;
 
     public Input() {

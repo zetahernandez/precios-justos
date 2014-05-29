@@ -38,7 +38,7 @@ public class Position implements Serializable{
 	private static final long serialVersionUID = -8470529851211003952L;
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@GeneratedValue(strategy=GenerationType.AUTO)
     private Long id;
     
     @Column (nullable = false)
