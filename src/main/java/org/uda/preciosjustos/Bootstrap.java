@@ -60,12 +60,8 @@ public class Bootstrap {
 					productDao.saveOrUpdate(new Product("pera", unit));
 				}
 
-				if (productDao.findByName("pan") == null) {
-					productDao.saveOrUpdate(new Product("tomate", unit));
-				}
-
 				if (productDao.findByName("zanahoria") == null) {
-					productDao.saveOrUpdate(new Product("tomate", unit));
+					productDao.saveOrUpdate(new Product("zanahoria", unit));
 				}
 
 				if (productDao.findByName("asado") == null) {

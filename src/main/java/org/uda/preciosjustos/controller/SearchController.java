@@ -28,7 +28,7 @@ public class SearchController {
 	@Autowired
 	private InputService inputService;
 
-	@RequestMapping(method = RequestMethod.GET, produces = { MediaType.APPLICATION_JSON_VALUE })
+	@RequestMapping(method = RequestMethod.GET)
 	@ResponseStatus(value = HttpStatus.OK)
 	public List<SearchDTO> search(@RequestParam("productName") String productName,
 			@RequestParam("latitude") Double latitude, @RequestParam("longitude") Double longitude,
@@ -36,7 +36,7 @@ public class SearchController {
 		
 		Position position = new Position(latitude, longitude, null);
 		
-		List<Input> closestInputs = inputService.closestInputs(productName,	position, 5);
+		List<Input> closestInputs = inputService.closestInputs(productName,	position, 3);
 		
 		return convertToSearchDto(closestInputs);
 	}
