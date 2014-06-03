@@ -16,6 +16,8 @@
 
 package org.uda.preciosjustos.dao;
 
+import java.util.List;
+
 import org.uda.preciosjustos.model.Input;
 
 
@@ -24,5 +26,7 @@ import org.uda.preciosjustos.model.Input;
  * @author octa
  */
 public interface InputDao extends AbstractDao<Input, Long>{
+
+	List<Input> findByProductName(String productName);
     
 }

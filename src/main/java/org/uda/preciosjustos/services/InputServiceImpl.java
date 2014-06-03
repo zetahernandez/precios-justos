@@ -19,6 +19,7 @@ package org.uda.preciosjustos.services;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -38,11 +39,11 @@ public class InputServiceImpl implements InputService{
     private InputDao inputDao;
     
     @Override
-    public List<Input> closestInputs(Position clientPosition, int resultQuantiy) {
+    @Transactional(readOnly=true)
+    public List<Input> closestInputs(String productName, Position clientPosition, int resultQuantiy) {
         
         List<Input> results = new ArrayList<Input>(resultQuantiy);
-        List<Input> inputs = this.allInputs();//find by name
-        
+        List<Input> inputs = this.findByName(productName);        
         for (Input input : inputs) {
             
             //insert inputs when array is not full
@@ -73,6 +74,13 @@ public class InputServiceImpl implements InputService{
     public List<Input> allInputs() {
             return inputDao.listAll();
     }
+
+	@Override
+	@Transactional(readOnly=true)
+	public List<Input> findByName(String productName) {
+		
+		return inputDao.findByProductName(productName);
+	}
     
     
     

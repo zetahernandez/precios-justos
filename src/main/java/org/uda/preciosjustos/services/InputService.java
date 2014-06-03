@@ -26,5 +26,6 @@ import org.uda.preciosjustos.model.Position;
  */
 public interface InputService {
     public List<Input> allInputs();
-    List<Input> closestInputs(Position clientPosition, int resultQuantiy);
+    List<Input> closestInputs(String productName,Position clientPosition, int resultQuantiy);
+    List<Input> findByName(String productName);
 }
