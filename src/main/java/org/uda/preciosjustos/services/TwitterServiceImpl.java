@@ -52,7 +52,7 @@ public class TwitterServiceImpl implements TwitterService {
 		try{
 			tweetData = new TweetExtractor(products).extract(tweetText);
 		}catch (Exception e){
-			LOG.error(e.getMessage());
+			LOG.error(e.getMessage(),e);
 		}
 		if(tweetData!= null){
 			GeocodeResponse geocodeResponse = null;

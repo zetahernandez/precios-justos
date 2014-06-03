@@ -18,8 +18,7 @@ package org.uda.preciosjustos.dao.impl;
 
 import java.util.List;
 
-import org.hibernate.Criteria;
-import org.hibernate.criterion.Restrictions;
+import org.hibernate.Query;
 import org.springframework.stereotype.Repository;
 import org.uda.preciosjustos.dao.InputDao;
 import org.uda.preciosjustos.model.Input;
@@ -38,8 +37,9 @@ public class InputDaoImpl extends AbstractDaoImpl<Input, Long> implements InputD
 	@SuppressWarnings("unchecked")
 	@Override
 	public List<Input> findByProductName(String productName) {
-		Criteria alias = getCurrentSession().createCriteria(getClass()).createAlias("product.name", "productName");
-		return alias.add(Restrictions.eq("productName",productName)).list();
+		Query createQuery = getCurrentSession().createQuery("Select i From Input as i join i.product as p where p.name = :productName");
+		createQuery.setParameter("productName", productName);
+		return (List<Input>) createQuery.list();
 	}
     
 }
