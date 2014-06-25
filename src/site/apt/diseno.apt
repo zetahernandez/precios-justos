@@ -1,0 +1,15 @@
+Sobre el diseño
+
+* Diagrama de clases
+
+[images/diagramaclases.png] Diagrama de clases
+
+* Diagrama de despliegue
+  
+  Precios justos es alojado en la plataforma {{{https://www.heroku.com/}Heroku}}
+
+[images/despliege.png] Diagrama de despliegue
+
+* Prototipo web
+
+[images/moqup.png] Prototipo web

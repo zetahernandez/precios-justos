@@ -35,8 +35,10 @@ public class SearchController {
 			@RequestParam("strategy") int strategy) {
 		
 		Position position = new Position(latitude, longitude, null);
+		List<Input> closestInputs = null;
+		closestInputs = inputService.closestInputs(productName,	position, 7);	
 		
-		List<Input> closestInputs = inputService.closestInputs(productName,	position, 3);
+		
 		
 		return convertToSearchDto(closestInputs);
 	}

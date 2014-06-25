@@ -1,0 +1,29 @@
+Bienvenido a Precios justos
+
+* Sobre Precios justos
+ 
+  Precios justos es una aplicaci&#243;n que tiene como objetivo ayudarte a elegir el lugar
+  dnde realizar tus compras para que estas sean mas econ&#243;micas o caminando los menos posible.
+
+  Precios justos obtiene los datos que los usuarios publican a trav&#225;z de la red social twitter
+  donde informan que producto, a que precio y donde realizaron una compra como por ejemplo.
+
++-----+
+#preciosjustos compr&#243; tomate a $ 6,50 el kilo en san martin 1500, Mendoza.
++-----+
+
+* Como usarlo
+
+  Puedes realizar busquedas ingresando al sitio {{{http://precios-justos-front.herokuapp.com/}Precios justos}}
+  Hace click en el mapa para indicar tu posici&#243;n, e ingresa el producto que estas buscando. El sistema 
+  te brindar&#225; la informaci&#243;n de donde puedes realizar tu compra.
+  
+* C&#243;digo fuente
+
+  El c&#243;digo fuente de precios justos se encuntra alojado y versionado en los repositorios de github
+  
+  Fuentes del backend: {{{https://github.com/zetahernandez/precios-justos}https://github.com/zetahernandez/precios-justos}}
+  
+  Fuentes del cliente web: {{{https://github.com/vernaj/app-vista}https://github.com/vernaj/app-vista}}
+  
+

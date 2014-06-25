@@ -1,0 +1,40 @@
+M&#233;tricas de Precios justos
+
+  El proyecto presenta los siguientes reportes y herramientas que ayudan a mantener y monitorizar
+  la calidad de nuestro software
+
+* Reporte de test
+
+  En el {{{./project-reports.html}Reporte de test}} se puede observar los resultados de la ejecuci&#243;n 
+  de los test unitarios.
+  
+* Covertura
+  
+  {{{./cobertura/index.html}Cobertura}} nos permite comprobar el porcentaje de c&#243;digo al que accedemos desde los test. 
+  Es decir, Cobertura nos permite saber cuanto c&#243;digo estamos realmente probando con nuestros test.
+
+* Java Docs
+
+  {{{./apidocs/index.html}Java Docs}} nos perimte observar la documentci&#243;n del c&#243;digo fuente del proyecto, y la 
+  estructura del mismo   
+  
+* PMD
+
+  {{{./pmd.html}PMD}}es una herramienta que audita el c&#243;digo Java encontrando problemas como: C&#243;digo muerto: variables y métodos (s&#243;lo privados) no usados
+  C&#243;digo no óptimo, Expresiones complejas: uso de if innecesarios, Posibles bugs.
+  
+* CPD
+
+  {{{./cpd.html}CPD}}es una herramienta que encuentra c&#243;digo duplicado
+  
+* Checkstyle
+  
+  {{{./checkstyle.html}CheckStyle}} es una herramienta de calidad de c&#243;digo encargada de validar los est&#225;ndares de construcci&#243;n de un desarrollo. 
+  Es decir, chequea la sintaxis del c&#243;digo fuente que ha sido desarrollado, encontrando las 
+  ocurrencias de un determinado problema que haya sido previamente configurado para ser detectado.
+   
+* FindBugs
+  
+  {{{./findbugs.html}FindBugs}} es una herramienta de an&#225;lisis est&#225;tico que permite la busqueda de 
+  posibles errores durante el desarrollo de software
+   

@@ -339,6 +339,37 @@
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-project-info-reports-plugin</artifactId>
+				<version>2.7</version>
+				<configuration>
+					<!-- your example configuration here -->
+				</configuration>
+				<reportSets>
+					<reportSet>
+						<reports>
+							<report>index</report>
+							<report>summary</report>
+							<report>dependency-info</report>
+							<report>modules</report>
+							<report>license</report>
+							<report>project-team</report>
+							<report>scm</report>
+							<report>issue-tracking</report>
+							<report>mailing-list</report>
+							<report>dependency-management</report>
+							<report>dependencies</report>
+							<report>dependency-convergence</report>
+							<report>cim</report>
+							<report>plugin-management</report>
+							<report>plugins</report>
+							<report>distribution-management</report>
+						</reports>
+					</reportSet>
+				</reportSets>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-surefire-report-plugin</artifactId>
 				<version>2.17</version>
 			</plugin>
@@ -388,5 +419,4 @@
 			</plugin>
 		</plugins>
 	</reporting>
-
 </project>
