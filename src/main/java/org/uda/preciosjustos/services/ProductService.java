@@ -15,7 +15,7 @@ public interface ProductService {
 	/**
 	 * Obtener todos los productos
 	 * 
-	 * @return List<Product>
+	 * @return List
 	 */
 	List<Product> allProducts();
 }

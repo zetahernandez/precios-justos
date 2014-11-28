@@ -4,7 +4,7 @@
 	<groupId>org.uda</groupId>
 	<artifactId>precios-justos</artifactId>
 	<packaging>war</packaging>
-	<version>1.0-SNAPSHOT</version>
+	<version>1.1-SNAPSHOT</version>
 	<name>precios-justos Webapp</name>
 	<description>Proyecto Precios justos backend</description>
 	<url>http://precios-justos.herokuapp.com/</url>
@@ -19,8 +19,8 @@
 
 	<properties>
 		<wtp.version>2.0</wtp.version>
-		<spring-framework-version>4.0.3.RELEASE</spring-framework-version>
-		<hibernate-version>4.3.5.Final</hibernate-version>
+		<spring-framework-version>4.1.2.RELEASE</spring-framework-version>
+		<hibernate-version>4.3.7.Final</hibernate-version>
 	</properties>
 
 	<organization>
@@ -36,6 +36,7 @@
 		<url>https://github.com/zetahernandez/precios-justos</url>
 		<connection>scm:git:git://github.com/zetahernandez/precios-justos.git</connection>
 		<developerConnection>scm:git:git@github.com:zetahernandez/precios-justos.git</developerConnection>
+		<tag>HEAD</tag>
 	</scm>
 
 	<developers>
@@ -45,25 +46,28 @@
 			<url>https://github.com/zetahernandez</url>
 			<id>zetahernandez</id>
 		</developer>
-		<developer>
-			<email>octa.ac@gmail.com</email>
-			<name>Octavio Augusto Coria</name>
-			<id>octa.ac</id>
-		</developer>
-		<developer>
-			<email>tadeoriverosk@gmail.com</email>
-			<name>Tadeo Riveros Koloszwa</name>
-			<url>https://github.com/zetahernandez</url>
-			<id>tadeoriverosk</id>
-		</developer>
 	</developers>
 
 	<distributionManagement>
 		<site>
-			<id>org.uda.preciosjustos-s3-site-repo</id>
+			<id>org.uda.preciosjustos-s3</id>
 			<name>AWS site repo</name>
 			<url>s3://org.uda.preciosjustos/site</url>
 		</site>
+		<repository>
+			<uniqueVersion>false</uniqueVersion>
+			<id>org.uda.preciosjustos-s3</id>
+			<name>AWS Repository</name>
+			<url>s3://org.uda.preciosjustos/repo</url>
+			<layout>default</layout>
+		</repository>
+		<snapshotRepository>
+			<uniqueVersion>true</uniqueVersion>
+			<id>org.uda.preciosjustos-s3</id>
+			<name>Propellors Snapshots</name>
+			<url>s3://org.uda.preciosjustos/maven</url>
+			<layout>default</layout>
+		</snapshotRepository>
 	</distributionManagement>
 
 	<dependencies>
@@ -271,7 +275,7 @@
 					<source>1.8</source>
 					<target>1.8</target>
 					<testSource>1.8</testSource>
-        			<testTarget>1.8</testTarget>
+					<testTarget>1.8</testTarget>
 				</configuration>
 			</plugin>
 			<plugin>
