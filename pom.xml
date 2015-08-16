@@ -18,8 +18,8 @@
 
 	<properties>
 		<wtp.version>2.0</wtp.version>
-		<spring-framework-version>4.1.2.RELEASE</spring-framework-version>
-		<hibernate-version>4.3.7.Final</hibernate-version>
+		<spring-framework-version>4.2.0.RELEASE</spring-framework-version>
+		<hibernate-version>4.3.11.Final</hibernate-version>
 		<maven.javadoc.failOnError>false</maven.javadoc.failOnError>
 	</properties>
 
@@ -338,6 +338,14 @@
 					</execution>
 				</executions>
 			</plugin>
+			<plugin>
+			  <groupId>org.eclipse.jetty</groupId>
+			  <artifactId>jetty-maven-plugin</artifactId>
+			  <version>9.2.2.v20140723</version>
+			  <configuration>
+			    <scanIntervalSeconds>10</scanIntervalSeconds>
+			  </configuration>
+			</plugin>
 		</plugins>
 		<pluginManagement>
 			<plugins>
@@ -429,7 +437,7 @@
 			<plugin>
 				<groupId>org.codehaus.mojo</groupId>
 				<artifactId>cobertura-maven-plugin</artifactId>
-				<version>2.6</version>
+				<version>2.7</version>
 			</plugin>
 		</plugins>
 	</reporting>
